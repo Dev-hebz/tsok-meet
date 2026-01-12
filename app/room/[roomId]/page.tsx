@@ -270,7 +270,7 @@ export default function RoomPage() {
           <div className="bg-black/30 backdrop-blur-sm px-8 py-5 border-t border-white/10">
             <div className="flex flex-col sm:flex-row items-center justify-between text-sm gap-2">
               <p className="text-blue-200 text-center sm:text-left">
-                TSOK 2014 • Teachers Specialists Organization Kuwait
+                TSOK 2014 • Teachers-Specialists Organization Kuwait
               </p>
               <p className="text-blue-300">
                 Developed by <span className="text-blue-400 font-bold">Godmisoft</span>
