@@ -83,7 +83,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col">
                 <h1 className="text-xl font-bold text-white tracking-wide">TSOK-Meet</h1>
-                <p className="text-xs text-blue-200">Teachers Specialists Organization Kuwait</p>
+                <p className="text-xs text-blue-200">Teachers-Specialists Organization Kuwait</p>
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-6 text-sm">
