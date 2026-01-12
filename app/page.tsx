@@ -291,7 +291,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-white font-bold text-lg">TSOK 2014</h3>
-                  <p className="text-blue-200 text-xs">Teachers Specialists Organization Kuwait</p>
+                  <p className="text-blue-200 text-xs">Teachers-Specialists Organization Kuwait</p>
                 </div>
               </div>
               <p className="text-blue-200 text-sm mb-3 leading-relaxed">
@@ -329,7 +329,7 @@ export default function Home() {
           {/* Bottom Bar */}
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-blue-200 text-sm mb-4 md:mb-0">
-              © 2024 TSOK-Meet Video Conference Platform. All rights reserved.
+              © 2026 TSOK-Meet Video Conference Platform. All rights reserved.
             </p>
             <p className="text-sm">
               <span className="text-blue-200">Developed with ❤️ by</span>
