@@ -333,7 +333,7 @@ export default function Home() {
             </p>
             <p className="text-sm">
               <span className="text-blue-200">Developed with ❤️ by</span>
-              <span className="text-blue-400 font-bold ml-2">Godmisoft</span>
+              <span className="text-blue-400 font-bold ml-2">TSOK 2026 Officer</span>
             </p>
           </div>
         </div>
