@@ -15,7 +15,7 @@ export default function Home() {
 
   const createMeeting = async () => {
     if (!displayName.trim()) {
-      alert('Palihug puno-a ang imong ngalan / Please enter your name');
+      alert('Please enter your name');
       return;
     }
 
@@ -23,7 +23,6 @@ export default function Home() {
     try {
       const newMeetingId = uuidv4().slice(0, 8).toUpperCase();
       
-      // Save meeting to Firebase if configured
       if (db) {
         try {
           await addDoc(collection(db, 'meetings'), {
@@ -40,7 +39,7 @@ export default function Home() {
       router.push(`/room/${newMeetingId}?name=${encodeURIComponent(displayName)}&host=true`);
     } catch (error) {
       console.error('Error creating meeting:', error);
-      alert('Sayop sa paghimo sa meeting / Error creating meeting. Please try again.');
+      alert('Error creating meeting. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -48,11 +47,11 @@ export default function Home() {
 
   const joinMeeting = () => {
     if (!displayName.trim()) {
-      alert('Palihug puno-a ang imong ngalan / Please enter your name');
+      alert('Please enter your name');
       return;
     }
     if (!meetingId.trim()) {
-      alert('Palihug puno-a ang Meeting ID / Please enter Meeting ID');
+      alert('Please enter Meeting ID');
       return;
     }
 
@@ -109,10 +108,10 @@ export default function Home() {
             />
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
-            Kumusta! Maayong pag-abot
+            Welcome to TSOK-Meet
           </h2>
           <p className="text-xl md:text-2xl text-blue-100 mb-3 font-light">
-            Professional Video Conferencing for TSOK
+            Professional Video Conferencing Platform
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-blue-200">
             <div className="flex items-center space-x-2">
@@ -133,14 +132,14 @@ export default function Home() {
             {/* Name Input Section */}
             <div className="bg-gradient-to-r from-blue-600/20 to-indigo-600/20 p-8 md:p-10 border-b border-white/10">
               <label className="block text-white text-sm font-semibold mb-3 uppercase tracking-wide">
-                Imong Ngalan / Your Name
+                Your Name
               </label>
               <input
                 type="text"
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
                 onKeyPress={(e) => handleKeyPress(e, 'create')}
-                placeholder="Pedro Dela Cruz"
+                placeholder="John Smith"
                 className="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/30 text-white text-lg placeholder-blue-200/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all backdrop-blur-sm"
               />
             </div>
@@ -160,8 +159,8 @@ export default function Home() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white">Maghimo og Meeting</h3>
-                        <p className="text-sm text-blue-200">Create New Conference</p>
+                        <h3 className="text-xl font-bold text-white">Create Meeting</h3>
+                        <p className="text-sm text-blue-200">Start New Conference</p>
                       </div>
                     </div>
                     <p className="text-blue-100 text-sm mb-6 leading-relaxed">
@@ -178,14 +177,14 @@ export default function Home() {
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>
-                          Naghimo...
+                          Creating...
                         </span>
                       ) : (
                         <span className="flex items-center justify-center text-lg">
                           <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                           </svg>
-                          Maghimo / Create Meeting
+                          Create New Meeting
                         </span>
                       )}
                     </button>
@@ -203,8 +202,8 @@ export default function Home() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white">Mosulod sa Meeting</h3>
-                        <p className="text-sm text-indigo-200">Join Existing Room</p>
+                        <h3 className="text-xl font-bold text-white">Join Meeting</h3>
+                        <p className="text-sm text-indigo-200">Enter Existing Room</p>
                       </div>
                     </div>
                     <p className="text-indigo-100 text-sm mb-4 leading-relaxed">
@@ -226,7 +225,7 @@ export default function Home() {
                         <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                         </svg>
-                        Mosulod / Join Meeting
+                        Join Meeting
                       </span>
                     </button>
                   </div>
@@ -240,10 +239,10 @@ export default function Home() {
           {/* Features Grid */}
           <div id="features" className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
             {[
-              { icon: '👥', title: '100+ Participants', desc: 'Unlimited members' },
-              { icon: '🖥️', title: 'Screen Share', desc: 'Ipakita ang screen' },
+              { icon: '👥', title: '100+ Participants', desc: 'Unlimited capacity' },
+              { icon: '🖥️', title: 'Screen Share', desc: 'Present anything' },
               { icon: '💬', title: 'Live Chat', desc: 'Real-time messaging' },
-              { icon: '📹', title: 'HD Quality', desc: 'Klaro kaayo' },
+              { icon: '📹', title: 'HD Quality', desc: 'Crystal clear video' },
             ].map((feature, index) => (
               <div key={index} className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20 hover:bg-white/15 hover:border-white/30 transition-all group">
                 <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform">{feature.icon}</div>
@@ -258,15 +257,15 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
                 <div className="text-4xl font-bold text-blue-300 mb-2">100%</div>
-                <div className="text-blue-200 text-sm">Libre / Free Forever</div>
+                <div className="text-blue-200 text-sm">Free Forever</div>
               </div>
               <div>
                 <div className="text-4xl font-bold text-green-300 mb-2">Unlimited</div>
-                <div className="text-blue-200 text-sm">Walay Limit sa Oras</div>
+                <div className="text-blue-200 text-sm">Meeting Time</div>
               </div>
               <div>
                 <div className="text-4xl font-bold text-purple-300 mb-2">Secure</div>
-                <div className="text-blue-200 text-sm">Luwas ug Private</div>
+                <div className="text-blue-200 text-sm">Encrypted & Private</div>
               </div>
             </div>
           </div>
@@ -299,7 +298,7 @@ export default function Home() {
                 Professional video conferencing platform for secure communication, online meetings, and collaborative reviews.
               </p>
               <p className="text-xs text-blue-300">
-                Ang Labing Hayag nga Organisasyon • Deo Et Patria
+                Excellence in Education • Deo Et Patria
               </p>
             </div>
 

@@ -2,67 +2,67 @@
 
 ![TSOK Logo](public/logo.png)
 
-**Professional video conferencing platform para sa TSOK (Teachers Specialists Organization Kuwait)**
+**Professional video conferencing platform for TSOK (Teachers Specialists Organization Kuwait)**
 
-Ang TSOK-Meet usa ka libre, secure, ug user-friendly video conferencing platform nga gidesinyo para sa officers meetings, general meetings, ug online reviews.
+TSOK-Meet is a free, secure, and user-friendly video conferencing platform designed specifically for officers meetings, general meetings, and online reviews.
 
 ---
 
-## 🌟 Features / Mga Hiyas
+## 🌟 Features
 
 ### ✅ Core Features
-- **Unlimited Participants** - 100+ members pwede mosulod
-- **No Time Limits** - Walay limit sa kadugayon sa meeting
-- **Screen Sharing** - Ipakita ang imong screen sa tanan
+- **Unlimited Participants** - Support for 100+ members
+- **No Time Limits** - Meetings can run as long as needed
+- **Screen Sharing** - Present your screen to all participants
 - **Live Chat** - Real-time messaging during meetings
-- **HD Quality** - Klaro kaayo ang video ug audio
-- **Recording** - Pwede mo-record ang meeting
-- **PWA Support** - Install sa desktop o mobile
-- **Bilingual Interface** - English ug Cebuano support
+- **HD Quality** - Crystal clear video and audio
+- **Recording** - Record important meetings
+- **PWA Support** - Install on desktop or mobile devices
+- **Professional Interface** - Clean and intuitive design
 
 ### 🔐 Security Features
-- End-to-end encrypted
+- End-to-end encrypted communications
 - Secure meeting IDs
 - No registration required
-- Private ug secure
+- Private and secure
 
 ### 📱 Platform Support
 - ✅ Desktop (Windows, Mac, Linux)
 - ✅ Mobile (Android, iOS)
-- ✅ Tablet
+- ✅ Tablet devices
 - ✅ All modern browsers
 
 ---
 
 ## 🚀 Quick Start Guide
 
-### Para sa Users
+### For Users
 
-#### 1. Maghimo og Meeting (Create Meeting)
-1. Bisitaha ang TSOK-Meet website
-2. Puno-a ang imong ngalan
-3. I-click ang "Maghimo / Create Meeting"
-4. I-share ang Meeting ID sa uban
+#### 1. Create a Meeting
+1. Visit the TSOK-Meet website
+2. Enter your name
+3. Click "Create Meeting"
+4. Share the Meeting ID with participants
 
-#### 2. Mosulod sa Meeting (Join Meeting)
-1. Bisitaha ang TSOK-Meet website
-2. Puno-a ang imong ngalan
-3. Puno-a ang Meeting ID nga gi-share nimo
-4. I-click ang "Mosulod / Join Meeting"
+#### 2. Join a Meeting
+1. Visit the TSOK-Meet website
+2. Enter your name
+3. Enter the Meeting ID shared with you
+4. Click "Join Meeting"
 
 ---
 
-## 💻 Para sa Developers - Installation & Deployment
+## 💻 For Developers - Installation & Deployment
 
 ### Prerequisites
 - Node.js 18+ installed
 - Git installed
-- Vercel account (para sa deployment)
+- Vercel account (for deployment)
 - GitHub account
 
 ### Local Development
 
-#### 1. Clone ang Repository
+#### 1. Clone the Repository
 ```bash
 git clone https://github.com/YOUR_USERNAME/tsok-meet.git
 cd tsok-meet
@@ -78,13 +78,13 @@ npm install
 npm run dev
 ```
 
-Ablihi ang browser ug bisitaha: `http://localhost:3000`
+Open your browser and visit: `http://localhost:3000`
 
-### Deployment sa Vercel
+### Deployment to Vercel
 
-#### Option 1: Gikan sa GitHub (Recommended)
+#### Option 1: From GitHub (Recommended)
 
-1. **Push sa GitHub**
+1. **Push to GitHub**
 ```bash
 git init
 git add .
@@ -94,10 +94,10 @@ git remote add origin https://github.com/YOUR_USERNAME/tsok-meet.git
 git push -u origin main
 ```
 
-2. **Deploy sa Vercel**
-   - Bisitaha [vercel.com](https://vercel.com)
+2. **Deploy to Vercel**
+   - Visit [vercel.com](https://vercel.com)
    - Click "New Project"
-   - Import ang imong GitHub repository
+   - Import your GitHub repository
    - Configure:
      - Framework Preset: **Next.js**
      - Root Directory: `./`
@@ -120,18 +120,18 @@ vercel --prod
 
 ### Firebase Configuration (Optional)
 
-Kung gusto nimo gamiton ang Firebase para sa meeting logs:
+If you want to use Firebase for meeting logs:
 
-1. Create Firebase project sa [console.firebase.google.com](https://console.firebase.google.com)
+1. Create a Firebase project at [console.firebase.google.com](https://console.firebase.google.com)
 2. Enable Firestore Database
-3. Copy ang configuration
+3. Copy the configuration
 4. Create `.env.local` file:
 
 ```bash
 cp .env.local.example .env.local
 ```
 
-5. Puno-a ang values sa `.env.local`:
+5. Fill in the values in `.env.local`:
 
 ```env
 NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
@@ -142,9 +142,9 @@ NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 ```
 
-6. Sa Vercel, i-add ang environment variables sa Settings > Environment Variables
+6. In Vercel, add the environment variables in Settings > Environment Variables
 
-**Note:** Ang app mo-work gihapon bisan walay Firebase!
+**Note:** The app works perfectly without Firebase!
 
 ---
 
@@ -153,28 +153,28 @@ NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 ### Desktop Installation
 
 **Chrome / Edge / Brave:**
-1. Bisitaha ang TSOK-Meet website
-2. Look for the install icon sa address bar
+1. Visit the TSOK-Meet website
+2. Look for the install icon in the address bar
 3. Click "Install TSOK-Meet"
 
 **Firefox:**
-1. Bisitaha ang TSOK-Meet website
-2. Click sa menu (☰)
+1. Visit the TSOK-Meet website
+2. Click the menu (☰)
 3. Click "Install TSOK-Meet"
 
 ### Mobile Installation
 
 **Android:**
-1. Open sa Chrome browser
-2. Bisitaha ang TSOK-Meet website
-3. Tap ang menu (⋮)
+1. Open in Chrome browser
+2. Visit the TSOK-Meet website
+3. Tap the menu (⋮)
 4. Select "Add to Home screen"
 5. Tap "Install"
 
 **iOS:**
-1. Open sa Safari browser
-2. Bisitaha ang TSOK-Meet website
-3. Tap ang share button
+1. Open in Safari browser
+2. Visit the TSOK-Meet website
+3. Tap the share button
 4. Select "Add to Home Screen"
 5. Tap "Add"
 
@@ -254,29 +254,29 @@ tsok-meet/
 
 2. **Update Colors:** Edit `app/page.tsx` and `app/room/[roomId]/page.tsx`
 
-3. **Update Text:** Edit language strings sa `app/page.tsx`
+3. **Update Text:** Edit text strings in `app/page.tsx`
 
 ### Adding Features
 
-Ang platform naka-base sa Jitsi Meet. Para sa additional features:
+The platform is based on Jitsi Meet. For additional features:
 
 1. Check [Jitsi Meet API Documentation](https://jitsi.github.io/handbook/docs/dev-guide/dev-guide-ljm-api/)
-2. Modify ang Jitsi URL configuration sa `app/room/[roomId]/page.tsx`
+2. Modify the Jitsi URL configuration in `app/room/[roomId]/page.tsx`
 
 ---
 
 ## 🐛 Troubleshooting
 
-### Issue: Service Worker dili mo-register
-**Solution:** Check kung HTTPS ang site. Service workers require HTTPS.
+### Issue: Service Worker not registering
+**Solution:** Check if the site is using HTTPS. Service workers require HTTPS.
 
-### Issue: PWA install button wala mu-appear
+### Issue: PWA install button not appearing
 **Solution:** 
 - Ensure manifest.json is accessible
 - Check browser console for errors
 - Verify HTTPS connection
 
-### Issue: Video/Audio dili mo-work
+### Issue: Video/Audio not working
 **Solution:**
 - Check browser permissions
 - Ensure microphone/camera access is granted
@@ -286,8 +286,8 @@ Ang platform naka-base sa Jitsi Meet. Para sa additional features:
 
 ## 📞 Support
 
-Para sa questions o issues:
-- Create issue sa GitHub
+For questions or issues:
+- Create an issue on GitHub
 - Email: [your-email@example.com]
 - Contact TSOK administrators
 
@@ -314,16 +314,16 @@ MIT License - Free to use and modify
 
 ## 🙏 Acknowledgments
 
-Salamat sa:
-- TSOK Officers ug Members
-- Filipino Teachers Community sa Kuwait
+Thanks to:
+- TSOK Officers and Members
+- Filipino Teachers Community in Kuwait
 - Jitsi Community
 - Next.js Team
 - Vercel Team
 
 ---
 
-**Mabuhay ang TSOK! Deo Et Patria!** 🇵🇭
+**Excellence in Education! Deo Et Patria!** 🇵🇭
 
 ---
 
@@ -333,7 +333,7 @@ Salamat sa:
 - Initial release
 - Core video conferencing features
 - PWA support
-- Bilingual interface (English/Cebuano)
+- Professional interface
 - Firebase integration (optional)
 - Unlimited participants
 - No time limits

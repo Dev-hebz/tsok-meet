@@ -1,96 +1,93 @@
 # 📱 TSOK-Meet Quick Start Guide
-**Dali nga Giya / Quick User Guide**
 
----
+## For HOST (Create a Meeting)
 
-## Para sa HOST (Maghimo og Meeting)
-
-### Lakang 1: Bisitaha ang Website
+### Step 1: Visit the Website
 ```
 https://your-tsok-meet-url.vercel.app
 ```
 
-### Lakang 2: Puno-a ang Imong Ngalan
-- Type ang imong full name
-- Example: "Juan Dela Cruz"
+### Step 2: Enter Your Name
+- Type your full name
+- Example: "John Smith"
 
-### Lakang 3: Click "Maghimo / Create Meeting"
-- I-click ang blue button
+### Step 3: Click "Create Meeting"
+- Click the blue button
 - Wait 3 seconds
-- Automatic mo-open ang meeting room
+- Automatically opens the meeting room
 
-### Lakang 4: Share ang Meeting ID
-- Copy ang Meeting ID (example: A1B2C3D4)
-- I-send ngadto sa members via:
+### Step 4: Share the Meeting ID
+- Copy the Meeting ID (example: A1B2C3D4)
+- Send to members via:
   - WhatsApp
   - Viber
   - SMS
   - Facebook Messenger
 
-**Alternative:** Share ang link directly:
+**Alternative:** Share the link directly:
 ```
 https://your-site.vercel.app/room/A1B2C3D4
 ```
 
 ---
 
-## Para sa PARTICIPANTS (Mosulod sa Meeting)
+## For PARTICIPANTS (Join a Meeting)
 
-### Lakang 1: Bisitaha ang Website
+### Step 1: Visit the Website
 ```
 https://your-tsok-meet-url.vercel.app
 ```
 
-### Lakang 2: Puno-a ang Imong Ngalan
-- Type ang imong name
-- Example: "Maria Santos"
+### Step 2: Enter Your Name
+- Type your name
+- Example: "Jane Doe"
 
-### Lakang 3: Enter Meeting ID
-- Type ang Meeting ID nga gi-share sa host
+### Step 3: Enter Meeting ID
+- Type the Meeting ID shared by the host
 - Example: A1B2C3D4
 
-### Lakang 4: Click "Mosulod / Join Meeting"
-- I-click ang purple button
+### Step 4: Click "Join Meeting"
+- Click the purple button
 - Wait 3 seconds
-- Automatic mo-join sa meeting room
+- Automatically joins the meeting room
 
 ---
 
 ## Meeting Room Features
 
 ### Video Controls
-- 🎥 **Camera On/Off** - Para on/off sa video
-- 🎤 **Mic On/Off** - Para mute/unmute
-- 📹 **Screen Share** - Para ipakita ang screen
-- 🎞️ **Record** - Para mo-record sa meeting
+- 🎥 **Camera On/Off** - Turn video on/off
+- 🎤 **Mic On/Off** - Mute/unmute
+- 📹 **Screen Share** - Share your screen
+- 🎞️ **Record** - Record the meeting
 
 ### Chat Features
-- 💬 **Chat** - Para magmessage
-- ✋ **Raise Hand** - Para mohangyo
-- 👥 **Participants** - Kita tanan ang members
+- 💬 **Chat** - Send messages
+- ✋ **Raise Hand** - Request to speak
+- 👥 **Participants** - View all members
 
 ### Meeting Controls
-- 📊 **Screen Share** - Share presentation
-- ⚙️ **Settings** - Quality, audio, video settings
-- 🚪 **Leave** - Mobiya sa meeting
+- 📊 **Screen Share** - Share presentations
+- ⚙️ **Settings** - Adjust quality, audio, video
+- 🚪 **Leave** - Exit the meeting
 
 ---
 
-## Tips para sa Maayo nga Meeting
+## Tips for Better Meetings
 
-### Para sa HOST:
-1. ✅ Test ang video/audio before meeting
+### For HOSTS:
+1. ✅ Test video/audio before meeting
 2. ✅ Share meeting link 5-10 minutes early
-3. ✅ I-mute ang participants kung daghan
+3. ✅ Mute participants if many people join
 4. ✅ Record important meetings
 5. ✅ Use screen share for presentations
 
-### Para sa PARTICIPANTS:
+### For PARTICIPANTS:
 1. ✅ Join 5 minutes early
-2. ✅ Mute mic kung dili mo musulti
-3. ✅ Turn off video kung slow ang internet
+2. ✅ Mute mic when not speaking
+3. ✅ Turn off video if internet is slow
 4. ✅ Use chat for questions
-5. ✅ Raise hand para mohangyo
+5. ✅ Raise hand to request speaking turn
 
 ---
 
@@ -102,35 +99,35 @@ https://your-tsok-meet-url.vercel.app
 - **Screen Share:** 2-4 Mbps
 
 ### Recommended Setup:
-- WiFi connection (mas stable)
+- WiFi connection (more stable)
 - Close other apps/tabs
-- Good lighting para sa video
+- Good lighting for video
 
 ---
 
 ## Troubleshooting
 
-### Problem: Wala moyawag ang video/audio
+### Problem: Video/audio not working
 **Solution:**
 1. Check browser permissions
 2. Allow camera and microphone access
-3. Refresh ang page
+3. Refresh the page
 4. Try different browser
 
-### Problem: Choppy ang video
+### Problem: Choppy video
 **Solution:**
 1. Check internet speed
 2. Turn off video temporarily
 3. Close other applications
-4. Move closer sa WiFi router
+4. Move closer to WiFi router
 
-### Problem: Wala makakita sa screen share
+### Problem: Cannot see screen share
 **Solution:**
 1. Ask host to stop and restart sharing
 2. Refresh your browser
 3. Check internet connection
 
-### Problem: Di maka-join sa meeting
+### Problem: Cannot join meeting
 **Solution:**
 1. Check Meeting ID (correct spelling)
 2. Refresh page
@@ -142,54 +139,54 @@ https://your-tsok-meet-url.vercel.app
 ## PWA Installation (Optional)
 
 ### Desktop:
-1. Bisitaha ang site
-2. Look for install button sa address bar
+1. Visit the site
+2. Look for install button in address bar
 3. Click "Install"
-4. TSOK-Meet mu-appear sa desktop
+4. TSOK-Meet appears on desktop
 
 ### Mobile:
-1. Open site sa Chrome/Safari
+1. Open site in Chrome/Safari
 2. Click menu (⋮ or share button)
 3. Select "Add to Home Screen"
-4. TSOK-Meet mu-appear sa home screen
+4. TSOK-Meet appears on home screen
 
 ---
 
 ## Common Questions
 
-### Q: Bayad ba ang TSOK-Meet?
-**A:** Dili! 100% FREE forever!
+### Q: Is TSOK-Meet free?
+**A:** Yes! 100% FREE forever!
 
-### Q: Naa bay limit sa meeting time?
-**A:** Wala! Unlimited meeting time!
+### Q: Is there a time limit on meetings?
+**A:** No! Unlimited meeting time!
 
-### Q: Pila ka-participants ang pwede?
-**A:** 100+ participants pwede!
+### Q: How many participants are allowed?
+**A:** 100+ participants supported!
 
-### Q: Luwas ba ang platform?
+### Q: Is the platform secure?
 **A:** Yes! End-to-end encrypted!
 
-### Q: Kailangan ba og account?
-**A:** Dili! No registration needed!
+### Q: Do I need an account?
+**A:** No! No registration needed!
 
-### Q: Pwede ba gamiton sa mobile?
+### Q: Can I use it on mobile?
 **A:** Yes! Works on all devices!
 
-### Q: Naa bay recording feature?
+### Q: Is there a recording feature?
 **A:** Yes! Built-in recording available!
 
-### Q: Pwede ba i-schedule ang meetings?
-**A:** You can create meeting ID and schedule it for later!
+### Q: Can I schedule meetings?
+**A:** You can create a meeting ID and schedule it for later!
 
 ---
 
 ## Contact Support
 
-Kung naa kay questions o problems:
+If you have questions or problems:
 
 **TSOK Officers:**
-- Contact ang IT Committee
-- Message sa TSOK Facebook Group
+- Contact the IT Committee
+- Message in TSOK Facebook Group
 
 **Technical Support:**
 - Developer: Godmisoft
@@ -252,10 +249,9 @@ Kung naa kay questions o problems:
 
 ---
 
-**Salamat sa paggamit sa TSOK-Meet!**  
 **Thank you for using TSOK-Meet!**
 
-**Mabuhay ang TSOK! 🇵🇭**  
+**Excellence in Education! 🇵🇭**  
 **Deo Et Patria!**
 
 ---

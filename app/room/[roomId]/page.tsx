@@ -16,7 +16,6 @@ export default function RoomPage() {
   const [countdown, setCountdown] = useState(3);
   const [copiedType, setCopiedType] = useState<'id' | 'link' | null>(null);
 
-  // Enhanced Jitsi meeting URL with better configuration
   const jitsiMeetingUrl = `https://meet.jit.si/TSOK${meetingId}#userInfo.displayName="${encodeURIComponent(displayName)}"&config.prejoinPageEnabled=false&config.startWithAudioMuted=false&config.startWithVideoMuted=false`;
   
   const meetingLink = typeof window !== 'undefined' 
@@ -24,12 +23,10 @@ export default function RoomPage() {
     : '';
 
   useEffect(() => {
-    // Countdown before redirect
     if (countdown > 0) {
       const timer = setTimeout(() => setCountdown(countdown - 1), 1000);
       return () => clearTimeout(timer);
     } else {
-      // Redirect to Jitsi after countdown
       window.location.href = jitsiMeetingUrl;
     }
   }, [countdown, jitsiMeetingUrl]);
@@ -70,7 +67,7 @@ export default function RoomPage() {
                 </div>
                 <div>
                   <h1 className="text-2xl font-bold text-white mb-1">
-                    Mosulod sa Conference
+                    Joining Conference
                   </h1>
                   <div className="flex items-center space-x-2 text-sm">
                     {isHost ? (
@@ -136,7 +133,7 @@ export default function RoomPage() {
               {/* Share Link */}
               <div>
                 <label className="block text-sm font-semibold text-blue-200 mb-2 uppercase tracking-wide">
-                  Ipaambit ang Link / Share Link
+                  Share Link
                 </label>
                 <div className="flex items-center space-x-3">
                   <input
@@ -177,10 +174,10 @@ export default function RoomPage() {
                   </div>
                   <div className="space-y-2">
                     <p className="text-2xl font-bold text-white">
-                      Nagpahilayo sa meeting room...
+                      Redirecting to meeting room...
                     </p>
                     <p className="text-blue-200">
-                      Redirecting to TSOK-Meet Conference
+                      Please wait a moment
                     </p>
                   </div>
                 </div>
@@ -190,10 +187,10 @@ export default function RoomPage() {
                     <div className="absolute inset-0 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                   </div>
                   <p className="text-xl text-white font-bold">
-                    Nag-abli sa conference room...
+                    Opening conference room...
                   </p>
                   <p className="text-blue-200 text-sm">
-                    Opening meeting space
+                    Connecting to TSOK-Meet
                   </p>
                 </div>
               )}
@@ -209,7 +206,7 @@ export default function RoomPage() {
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
-                  <span className="text-lg">Mosulod Karon / Join Now</span>
+                  <span className="text-lg">Join Now</span>
                 </span>
               </button>
               
@@ -217,7 +214,7 @@ export default function RoomPage() {
                 onClick={() => router.push('/')}
                 className="sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-6 rounded-xl transition-all border border-white/30 hover:border-white/50"
               >
-                Kanselahon / Cancel
+                Cancel
               </button>
             </div>
 
@@ -236,16 +233,16 @@ export default function RoomPage() {
                       Powered by Jitsi Meet - Professional Grade
                     </p>
                     <ul className="text-xs text-blue-100 space-y-1">
-                      <li>✓ Walay limit sa oras / No time limits</li>
-                      <li>✓ 100+ participants support</li>
-                      <li>✓ Screen share, recording, live chat included</li>
-                      <li>✓ HD video ug audio quality</li>
+                      <li>✓ No time limits on meetings</li>
+                      <li>✓ Support for 100+ participants</li>
+                      <li>✓ Screen share, recording, and live chat included</li>
+                      <li>✓ HD video and audio quality</li>
                     </ul>
                   </div>
                 </div>
               </div>
 
-              {/* TSOK Tips */}
+              {/* Meeting Tips */}
               <div className="bg-gradient-to-r from-green-600/20 to-teal-600/20 backdrop-blur-sm rounded-xl p-6 border border-green-400/30">
                 <div className="flex items-start space-x-3">
                   <div className="flex-shrink-0">
@@ -255,12 +252,12 @@ export default function RoomPage() {
                   </div>
                   <div className="flex-1">
                     <p className="text-sm font-bold text-green-200 mb-2">
-                      Tips para sa Meeting
+                      Meeting Tips
                     </p>
                     <ul className="text-xs text-green-100 space-y-1">
-                      <li>• I-mute ang mic kung dili mo mosulti</li>
-                      <li>• Gamita ang chat para sa questions</li>
-                      <li>• Siguroha nga stable ang internet connection</li>
+                      <li>• Mute your microphone when not speaking</li>
+                      <li>• Use chat for questions and comments</li>
+                      <li>• Ensure stable internet connection for best quality</li>
                     </ul>
                   </div>
                 </div>

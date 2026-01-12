@@ -3,7 +3,7 @@ import './globals.css';
 import RegisterServiceWorker from '@/components/RegisterServiceWorker';
 
 export const metadata: Metadata = {
-  title: 'TSOK-Meet - Teachers Specialists Video Conference',
+  title: 'TSOK-Meet - Video Conference Platform',
   description: 'Professional video conferencing platform for TSOK officers meetings, general meetings, and online reviews',
   manifest: '/manifest.json',
   icons: {
