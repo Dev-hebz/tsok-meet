@@ -15,13 +15,24 @@ export default function RoomPage() {
   
   const [copied, setCopied] = useState(false);
   const [countdown, setCountdown] = useState(3);
-  const [copiedType, setCopiedType] = useState<'id' | 'link' | null>(null);
+  const [copiedType, setCopiedType] = useState<'id' | 'link' | 'invite' | null>(null);
 
   const jitsiMeetingUrl = `https://meet.jit.si/TSOK${meetingId}#userInfo.displayName="${encodeURIComponent(displayName)}"&config.prejoinPageEnabled=false&config.startWithAudioMuted=false&config.startWithVideoMuted=false&config.subject="${encodeURIComponent(meetingTitle)}"`;
   
   const meetingLink = typeof window !== 'undefined' 
     ? `${window.location.origin}/room/${meetingId}?title=${encodeURIComponent(meetingTitle)}` 
     : '';
+
+  const invitationMessage = `${displayName} is inviting you to a meeting.
+
+Meeting Title: ${meetingTitle}
+Meeting ID: ${meetingId}
+
+Join the meeting:
+${meetingLink}
+
+---
+TSOK-Meet - Video Conference Platform`;
 
   useEffect(() => {
     if (countdown > 0) {
@@ -32,7 +43,7 @@ export default function RoomPage() {
     }
   }, [countdown, jitsiMeetingUrl]);
 
-  const copyToClipboard = (text: string, type: 'id' | 'link') => {
+  const copyToClipboard = (text: string, type: 'id' | 'link' | 'invite') => {
     navigator.clipboard.writeText(text);
     setCopied(true);
     setCopiedType(type);
@@ -171,6 +182,45 @@ export default function RoomPage() {
                     )}
                   </button>
                 </div>
+              </div>
+
+              {/* Invitation Message */}
+              <div>
+                <label className="block text-sm font-semibold text-blue-200 mb-2 uppercase tracking-wide">
+                  Invitation Message (Copy & Send)
+                </label>
+                <div className="relative">
+                  <textarea
+                    value={invitationMessage}
+                    readOnly
+                    rows={7}
+                    className="w-full bg-white/10 backdrop-blur-sm rounded-xl px-6 py-5 border border-white/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-400 shadow-inner resize-none font-mono leading-relaxed"
+                  />
+                  <button
+                    onClick={() => copyToClipboard(invitationMessage, 'invite')}
+                    className="absolute top-3 right-3 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-all transform hover:scale-105 active:scale-95 shadow-lg text-sm font-semibold"
+                    title="Copy Invitation"
+                  >
+                    {copied && copiedType === 'invite' ? (
+                      <span className="flex items-center space-x-1">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Copied!</span>
+                      </span>
+                    ) : (
+                      <span className="flex items-center space-x-1">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                        <span>Copy</span>
+                      </span>
+                    )}
+                  </button>
+                </div>
+                <p className="text-xs text-blue-300 mt-2">
+                  📱 Copy this message and send via WhatsApp, Viber, SMS, or Email
+                </p>
               </div>
 
             </div>
