@@ -11,11 +11,17 @@ export default function Home() {
   const router = useRouter();
   const [meetingId, setMeetingId] = useState('');
   const [displayName, setDisplayName] = useState('');
+  const [meetingTitle, setMeetingTitle] = useState('');
   const [loading, setLoading] = useState(false);
 
   const createMeeting = async () => {
     if (!displayName.trim()) {
       alert('Please enter your name');
+      return;
+    }
+
+    if (!meetingTitle.trim()) {
+      alert('Please enter meeting title/subject');
       return;
     }
 
@@ -27,6 +33,7 @@ export default function Home() {
         try {
           await addDoc(collection(db, 'meetings'), {
             meetingId: newMeetingId,
+            meetingTitle: meetingTitle,
             hostName: displayName,
             createdAt: serverTimestamp(),
             status: 'active'
@@ -36,7 +43,7 @@ export default function Home() {
         }
       }
 
-      router.push(`/room/${newMeetingId}?name=${encodeURIComponent(displayName)}&host=true`);
+      router.push(`/room/${newMeetingId}?name=${encodeURIComponent(displayName)}&host=true&title=${encodeURIComponent(meetingTitle)}`);
     } catch (error) {
       console.error('Error creating meeting:', error);
       alert('Error creating meeting. Please try again.');
@@ -83,7 +90,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col">
                 <h1 className="text-xl font-bold text-white tracking-wide">TSOK-Meet</h1>
-                <p className="text-xs text-blue-200">Teachers-Specialists Organization Kuwait</p>
+                <p className="text-xs text-blue-200">Teachers Specialists Organization Kuwait</p>
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-6 text-sm">
@@ -131,17 +138,35 @@ export default function Home() {
             
             {/* Name Input Section */}
             <div className="bg-gradient-to-r from-blue-600/20 to-indigo-600/20 p-8 md:p-10 border-b border-white/10">
-              <label className="block text-white text-sm font-semibold mb-3 uppercase tracking-wide">
-                Your Name
-              </label>
-              <input
-                type="text"
-                value={displayName}
-                onChange={(e) => setDisplayName(e.target.value)}
-                onKeyPress={(e) => handleKeyPress(e, 'create')}
-                placeholder="John Smith"
-                className="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/30 text-white text-lg placeholder-blue-200/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all backdrop-blur-sm"
-              />
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-white text-sm font-semibold mb-3 uppercase tracking-wide">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    value={displayName}
+                    onChange={(e) => setDisplayName(e.target.value)}
+                    onKeyPress={(e) => handleKeyPress(e, 'create')}
+                    placeholder="John Smith"
+                    className="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/30 text-white text-lg placeholder-blue-200/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all backdrop-blur-sm"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-white text-sm font-semibold mb-3 uppercase tracking-wide">
+                    Meeting Title / Subject
+                  </label>
+                  <input
+                    type="text"
+                    value={meetingTitle}
+                    onChange={(e) => setMeetingTitle(e.target.value)}
+                    onKeyPress={(e) => handleKeyPress(e, 'create')}
+                    placeholder="e.g., Officers Meeting, General Assembly, LET Review"
+                    className="w-full px-6 py-4 rounded-xl bg-white/10 border border-white/30 text-white text-lg placeholder-blue-200/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all backdrop-blur-sm"
+                  />
+                </div>
+              </div>
             </div>
 
             {/* Actions Grid */}
@@ -291,7 +316,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-white font-bold text-lg">TSOK 2014</h3>
-                  <p className="text-blue-200 text-xs">Teachers-Specialists Organization Kuwait</p>
+                  <p className="text-blue-200 text-xs">Teachers Specialists Organization Kuwait</p>
                 </div>
               </div>
               <p className="text-blue-200 text-sm mb-3 leading-relaxed">
@@ -329,11 +354,11 @@ export default function Home() {
           {/* Bottom Bar */}
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-blue-200 text-sm mb-4 md:mb-0">
-              © 2026 TSOK-Meet Video Conference Platform. All rights reserved.
+              © 2024 TSOK-Meet Video Conference Platform. All rights reserved.
             </p>
             <p className="text-sm">
               <span className="text-blue-200">Developed with ❤️ by</span>
-              <span className="text-blue-400 font-bold ml-2">TSOK 2026 Officer</span>
+              <span className="text-blue-400 font-bold ml-2">Godmisoft</span>
             </p>
           </div>
         </div>
