@@ -10,16 +10,17 @@ export default function RoomPage() {
   const router = useRouter();
   const meetingId = params.roomId as string;
   const displayName = searchParams.get('name') || 'Guest';
+  const meetingTitle = searchParams.get('title') || 'TSOK Meeting';
   const isHost = searchParams.get('host') === 'true';
   
   const [copied, setCopied] = useState(false);
   const [countdown, setCountdown] = useState(3);
   const [copiedType, setCopiedType] = useState<'id' | 'link' | null>(null);
 
-  const jitsiMeetingUrl = `https://meet.jit.si/TSOK${meetingId}#userInfo.displayName="${encodeURIComponent(displayName)}"&config.prejoinPageEnabled=false&config.startWithAudioMuted=false&config.startWithVideoMuted=false`;
+  const jitsiMeetingUrl = `https://meet.jit.si/TSOK${meetingId}#userInfo.displayName="${encodeURIComponent(displayName)}"&config.prejoinPageEnabled=false&config.startWithAudioMuted=false&config.startWithVideoMuted=false&config.subject="${encodeURIComponent(meetingTitle)}"`;
   
   const meetingLink = typeof window !== 'undefined' 
-    ? `${window.location.origin}/room/${meetingId}` 
+    ? `${window.location.origin}/room/${meetingId}?title=${encodeURIComponent(meetingTitle)}` 
     : '';
 
   useEffect(() => {
@@ -67,7 +68,7 @@ export default function RoomPage() {
                 </div>
                 <div>
                   <h1 className="text-2xl font-bold text-white mb-1">
-                    Joining Conference
+                    {meetingTitle}
                   </h1>
                   <div className="flex items-center space-x-2 text-sm">
                     {isHost ? (
@@ -101,6 +102,18 @@ export default function RoomPage() {
             {/* Meeting Info */}
             <div className="space-y-4 mb-8">
               
+              {/* Meeting Title */}
+              <div>
+                <label className="block text-sm font-semibold text-blue-200 mb-2 uppercase tracking-wide">
+                  Meeting Title
+                </label>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 border border-white/30 shadow-inner">
+                  <p className="text-xl font-semibold text-white">
+                    {meetingTitle}
+                  </p>
+                </div>
+              </div>
+
               {/* Meeting ID */}
               <div>
                 <label className="block text-sm font-semibold text-blue-200 mb-2 uppercase tracking-wide">
@@ -270,7 +283,7 @@ export default function RoomPage() {
           <div className="bg-black/30 backdrop-blur-sm px-8 py-5 border-t border-white/10">
             <div className="flex flex-col sm:flex-row items-center justify-between text-sm gap-2">
               <p className="text-blue-200 text-center sm:text-left">
-                TSOK 2014 • Teachers-Specialists Organization Kuwait
+                TSOK 2014 • Teachers Specialists Organization Kuwait
               </p>
               <p className="text-blue-300">
                 Developed by <span className="text-blue-400 font-bold">Godmisoft</span>
