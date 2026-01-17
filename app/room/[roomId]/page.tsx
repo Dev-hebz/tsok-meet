@@ -14,7 +14,7 @@ export default function RoomPage() {
   const isHost = searchParams.get('host') === 'true';
   
   const [copied, setCopied] = useState(false);
-  const [countdown, setCountdown] = useState(3);
+  const [countdown, setCountdown] = useState(10);
   const [copiedType, setCopiedType] = useState<'id' | 'link' | 'invite' | null>(null);
 
   const jitsiMeetingUrl = `https://meet.jit.si/TSOK${meetingId}#userInfo.displayName="${encodeURIComponent(displayName)}"&config.prejoinPageEnabled=false&config.startWithAudioMuted=false&config.startWithVideoMuted=false&config.subject="${encodeURIComponent(meetingTitle)}"`;
@@ -218,9 +218,16 @@ TSOK-Meet - Video Conference Platform`;
                     )}
                   </button>
                 </div>
-                <p className="text-xs text-blue-300 mt-2">
-                  📱 Copy this message and send via WhatsApp, Viber, SMS, or Email
-                </p>
+                <div className="mt-2 space-y-1">
+                  <p className="text-xs text-blue-300">
+                    📱 Copy this message and send via WhatsApp, Viber, SMS, or Email
+                  </p>
+                  {isHost && countdown > 0 && (
+                    <p className="text-xs text-yellow-300 font-semibold">
+                      ⏱️ You have {countdown} seconds to copy the invitation before auto-redirect
+                    </p>
+                  )}
+                </div>
               </div>
 
             </div>
@@ -240,7 +247,7 @@ TSOK-Meet - Video Conference Platform`;
                       Redirecting to meeting room...
                     </p>
                     <p className="text-blue-200">
-                      Please wait a moment
+                      {countdown > 5 ? 'Copy the invitation message above to share with participants' : 'Opening meeting room soon...'}
                     </p>
                   </div>
                 </div>
